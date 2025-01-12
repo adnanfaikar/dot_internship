@@ -6,7 +6,7 @@ const Quiz = () => {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
-    const [timer, setTimer] = useState(120);
+    const [timer, setTimer] = useState(1000);
 
     useEffect(() => {
         const loadQuestions = async () => {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const CACHE_DURATION = 60 * 60 * 1; 
+const CACHE_DURATION = 60 * 60 * 1000; 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const fetchQuestions = async () => {
@@ -22,7 +22,6 @@ export const fetchQuestions = async () => {
       'https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple'
     );
 
-    // Simpan data baru ke cache bersama timestamp
     localStorage.setItem('questions', JSON.stringify(response.data.results));
     localStorage.setItem('questionsTimestamp', Date.now().toString());
     console.log('Pertanyaan berhasil diambil dan disimpan ke cache.');
